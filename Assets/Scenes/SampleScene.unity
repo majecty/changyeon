@@ -1168,6 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542826551}
   - component: {fileID: 542826552}
+  - component: {fileID: 542826553}
   m_Layer: 0
   m_Name: tablecloth
   m_TagString: Untagged
@@ -1183,7 +1184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542826550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.28, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -20, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1409094994}
@@ -1240,6 +1241,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &542826553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542826550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e625e79981c5e40b361adf60398e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plate: {fileID: 1409094996}
 --- !u!1 &676398738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,6 +2197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409094994}
   - component: {fileID: 1409094995}
+  - component: {fileID: 1409094996}
   m_Layer: 0
   m_Name: plate
   m_TagString: Untagged
@@ -2198,7 +2213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409094993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: -20, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 266596071}
@@ -2258,6 +2273,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1409094996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409094993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6feb980842807f54aa58f1566afb396c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1444305098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,3 +3076,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29045e5387a3b9e4f83bb85e31b9f2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}

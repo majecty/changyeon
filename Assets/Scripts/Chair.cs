@@ -8,5 +8,6 @@ public class Chair : MonoBehaviour
     void OnMouseDown()
     {
         kitchen.onChairClick();
+        GetComponent<Rotator>().Stop();
     }
 }
