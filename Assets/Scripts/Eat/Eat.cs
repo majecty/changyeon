@@ -13,6 +13,8 @@ public class Eat : MonoBehaviour
     {
         RaisingHand,
         WaitingHeadClick,
+        MoveToMouse,
+        WaitEyeClick,
         Eating,
     }
 
@@ -38,7 +40,7 @@ public class Eat : MonoBehaviour
             return;
         }
 
-        this.state = State.Eating;
+        this.state = State.MoveToMouse;
         head.OpenTheMouse();
         StartCoroutine(ShowEatAnimation());
     }
@@ -52,5 +54,17 @@ public class Eat : MonoBehaviour
         head.CloseTheMouse();
         StartCoroutine(spoonAndForkHolder.RotateRight());
         yield return armRotator.MoveDownFast();
+        this.state = State.WaitEyeClick;
+        head.StartBlinkEyes();
+    }
+
+    public void OnEyeClick()
+    {
+        if (this.state != State.WaitEyeClick)
+        {
+            return;
+        }
+
+        this.state = State.Eating;
     }
 }

@@ -7,6 +7,9 @@ public class Head : MonoBehaviour
     [SerializeField] private Eat eat;
     [SerializeField] private NormalMouse normalMouse;
     [SerializeField] private OpenMouse OpenMouse;
+    [SerializeField] private EyeNormal1 eyeNormal1;
+    [SerializeField] private EyeNormal2 eyeNormal2;
+    private Coroutine blinkingAnimation = null;
 
     void OnMouseDown()
     {
@@ -23,5 +26,42 @@ public class Head : MonoBehaviour
     {
         this.OpenMouse.gameObject.SetActive(false);
         this.normalMouse.gameObject.SetActive(true);
+    }
+
+    public void StartBlinkEyes()
+    {
+        if (this.blinkingAnimation != null)
+        {
+            Debug.LogError("Blink called twice");
+            StopCoroutine(this.blinkingAnimation);
+        }
+
+        this.blinkingAnimation = StartCoroutine(Blink());
+    }
+
+    public void StopBlinkEyes()
+    {
+        if (this.blinkingAnimation == null)
+        {
+            Debug.LogError("Blink animation already stopped");
+            return;
+        }
+        StopCoroutine(blinkingAnimation);
+
+        this.eyeNormal1.gameObject.SetActive(true);
+        this.eyeNormal2.gameObject.SetActive(false);
+    }
+
+    private IEnumerator Blink()
+    {
+        while (true)
+        {
+            this.eyeNormal1.gameObject.SetActive(true);
+            this.eyeNormal2.gameObject.SetActive(false);
+            yield return new WaitForSecondsRealtime(0.3f);
+            this.eyeNormal1.gameObject.SetActive(false);
+            this.eyeNormal2.gameObject.SetActive(true);
+            yield return new WaitForSecondsRealtime(0.3f);
+        }
     }
 }
