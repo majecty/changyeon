@@ -10,8 +10,8 @@ public class MouseMumble : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            yield return TweenUtil.LocalMove(transform.position, new Vector3(0, 0.2f, -1), 1.0f, transform);
-            yield return TweenUtil.LocalMove(transform.position, new Vector3(0, -0.2f, -1), 1.0f, transform);
+            yield return TweenUtil.LocalMove(transform.position, new Vector3(0, 0.2f, -1), 0.5f, transform);
+            yield return TweenUtil.LocalMove(transform.position, new Vector3(0, -0.2f, -1), 0.5f, transform);
         }
 
         transform.position = new Vector3(0, 0, -1);
