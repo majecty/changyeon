@@ -132,4 +132,14 @@ public class Table : MonoBehaviour
         }
         StartCoroutine(arm.MoveToSoup());
     }
+
+    public void OnSausageClick()
+    {
+        if (this.grapped != Grapped.Fork)
+        {
+            return;
+        }
+
+        StartCoroutine(arm.MoveToSausage());
+    }
 }

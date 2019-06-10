@@ -1150,6 +1150,7 @@ MonoBehaviour:
   forkPosition: {x: 15, y: -6, z: -20}
   ricePosition: {x: -1, y: -13, z: -20}
   soupPosition: {x: 7, y: -13, z: -20}
+  sausagePosition: {x: 4, y: -8, z: -20}
   hand1: {fileID: 1300602874}
   hand2: {fileID: 200724163}
 --- !u!1 &519420028
@@ -2664,6 +2665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157f8d97261eacc4d8e10fa4a1c65ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}
 --- !u!1 &1474490216
 GameObject:
   m_ObjectHideFlags: 0

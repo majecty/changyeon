@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sausage : MonoBehaviour
 {
+    [SerializeField] private Table table;
     public void StartRotate()
     {
         GetComponent<Rotator>().enabled = true;
@@ -13,5 +14,10 @@ public class Sausage : MonoBehaviour
     public void StopRotate()
     {
         GetComponent<Rotator>().Stop();
+    }
+
+    void OnMouseDown()
+    {
+        table.OnSausageClick();
     }
 }

@@ -9,6 +9,7 @@ public class Arm : MonoBehaviour
     [SerializeField] private Vector3 forkPosition = new Vector3(15, -6, -20);
     [SerializeField] private Vector3 ricePosition = new Vector3(-1, -13, -20);
     [SerializeField] private Vector3 soupPosition = new Vector3(7, -13, -20);
+    [SerializeField] private Vector3 sausagePosition = new Vector3(4, -8, -20);
 
     [SerializeField] private GameObject hand1;
     [SerializeField] private GameObject hand2;
@@ -73,6 +74,18 @@ public class Arm : MonoBehaviour
             StopCoroutine(moveCoroutine);
         }
         this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: soupPosition, 1f, transform));
+        yield return this.moveCoroutine;
+    }
+
+    public IEnumerator MoveToSausage()
+    {
+        hand1.SetActive(false);
+        hand2.SetActive(true);
+        if (this.moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+        this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: sausagePosition, 1f, transform));
         yield return this.moveCoroutine;
     }
 }
