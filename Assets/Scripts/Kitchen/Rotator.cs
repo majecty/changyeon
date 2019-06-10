@@ -27,7 +27,6 @@ public class Rotator : MonoBehaviour
             {
                 this.speed = Mathf.Abs(this.speed);
             }
-            Debug.Log(transform.rotation.eulerAngles.z);
         }
     }
 }

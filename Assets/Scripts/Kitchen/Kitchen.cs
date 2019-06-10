@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kitchen : MonoBehaviour
 {
-    [SerializeField] private GameObject chair;
+    [SerializeField] private SceneMaster sceneMaster;
 
     // Start is called before the first frame update
     void Start()
@@ -12,4 +12,8 @@ public class Kitchen : MonoBehaviour
         
     }
 
+    public void onChairClick()
+    {
+        sceneMaster.onKitchenEnd();
+    }
 }

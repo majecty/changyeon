@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 207782388}
   - component: {fileID: 207782387}
   - component: {fileID: 207782389}
+  - component: {fileID: 207782390}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -497,6 +498,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   angle: 10
+--- !u!114 &207782390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207782385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7c01b0aaf57184d94dc682a3c4d8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kitchen: {fileID: 2023192043}
 --- !u!1 &266596070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023192041}
   - component: {fileID: 2023192042}
+  - component: {fileID: 2023192043}
   m_Layer: 0
   m_Name: kitchen
   m_TagString: Untagged
@@ -2880,6 +2895,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2023192043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023192040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d0b4831a37d024e84712f2d2a28b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMaster: {fileID: 2112124400}
 --- !u!1 &2100748012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +2997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112124399}
   - component: {fileID: 2112124398}
+  - component: {fileID: 2112124400}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3008,3 +3037,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2112124400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112124397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29045e5387a3b9e4f83bb85e31b9f2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
