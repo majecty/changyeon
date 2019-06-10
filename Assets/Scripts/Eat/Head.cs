@@ -9,6 +9,9 @@ public class Head : MonoBehaviour
     [SerializeField] private OpenMouse OpenMouse;
     [SerializeField] private EyeNormal1 eyeNormal1;
     [SerializeField] private EyeNormal2 eyeNormal2;
+    [SerializeField] private EyeHappy eyeHappy;
+    [SerializeField] private Ponny ponny;
+    [SerializeField] private Bangs bangs;
     private Coroutine blinkingAnimation = null;
 
     void OnMouseDown()
@@ -63,5 +66,21 @@ public class Head : MonoBehaviour
             this.eyeNormal2.gameObject.SetActive(true);
             yield return new WaitForSecondsRealtime(0.3f);
         }
+    }
+
+    public void MakeEyeHappy()
+    {
+        this.eyeNormal1.gameObject.SetActive(false);
+        this.eyeHappy.gameObject.SetActive(true);
+    }
+
+    public void shakePonny()
+    {
+        ponny.GetComponent<Rotator>().enabled = true;
+    }
+
+    public void shakeBangs()
+    {
+        bangs.GetComponent<Rotator>().enabled = true;
     }
 }

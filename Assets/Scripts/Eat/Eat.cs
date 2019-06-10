@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Eat : MonoBehaviour
 {
@@ -66,5 +67,10 @@ public class Eat : MonoBehaviour
     IEnumerator ShowEatAnimation()
     {
         yield return mouseMumble.ShakeThirdTimes();
+        head.MakeEyeHappy();
+        head.shakePonny();
+        head.shakeBangs();
+        yield return new WaitForSecondsRealtime(3.0f);
+        SceneManager.LoadScene("Main");
     }
 }
