@@ -22,6 +22,12 @@ public static class TweenUtil
 
             x += Time.deltaTime / time;
             yield return null;
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                Debug.Log("Use Cheat");
+                x = 1;
+            }
         }
     }
 }
