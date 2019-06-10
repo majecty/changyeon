@@ -11,7 +11,7 @@ public class Eat : MonoBehaviour
     [SerializeField] private SpoonAndForkHolder spoonAndForkHolder;
     [SerializeField] private MouseMumble mouseMumble;
 
-    enum Target
+    public enum Target
     {
         Rice,
         Soup,
@@ -32,9 +32,9 @@ public class Eat : MonoBehaviour
     private State state = State.RaisingHand;
 
     // Start is called before the first frame update
-    void Start()
+    public void StartEat(Target target)
     {
-        this.target = Target.Sausage;
+        this.target = target;
 
         if (this.target == Target.Rice)
         {
