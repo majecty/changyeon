@@ -219,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110569471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.11, y: -2.3199997, z: -1}
+  m_LocalPosition: {x: 10.11, y: -2.3199997, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1130851745}
@@ -1120,6 +1120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spoonPosition: {x: 13, y: -6, z: -20}
   forkPosition: {x: 15, y: -6, z: -20}
+  ricePosition: {x: -1, y: -13, z: -20}
+  soupPosition: {x: 7, y: -13, z: -20}
   hand1: {fileID: 1300602874}
   hand2: {fileID: 200724163}
 --- !u!1 &519420028
@@ -1569,7 +1571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037048590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.87, y: -1.9899998, z: -1}
+  m_LocalPosition: {x: 7.87, y: -1.9899998, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1130851745}
@@ -2341,6 +2343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54b1030e334aca4580c4b9352ad75ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}
 --- !u!1 &1409094993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdaed1a4fed7bc4d84d2b3840fbd5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}
 --- !u!1 &1699065380
 GameObject:
   m_ObjectHideFlags: 0

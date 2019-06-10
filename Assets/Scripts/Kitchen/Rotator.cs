@@ -38,4 +38,13 @@ public class Rotator : MonoBehaviour
     {
         this.stop = true;
     }
+
+    public void StartRotate()
+    {
+        if (this.stop)
+        {
+            this.stop = false;
+            StartCoroutine(Shake());
+        }
+    }
 }

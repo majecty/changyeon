@@ -10,6 +10,16 @@ public class Table : MonoBehaviour
     [SerializeField] private Rice rice;
     [SerializeField] private Soup soup;
 
+    enum Grapped
+    {
+        None,
+        Spoon,
+        Fork
+    }
+
+    private Grapped grapped = Grapped.None;
+    private Coroutine grapCoroutine = null;
+
     public void Show()
     {
         StartCoroutine(ShowAnimation());
@@ -41,15 +51,73 @@ public class Table : MonoBehaviour
 
     public void OnForkClick()
     {
+        if (this.grapped == Grapped.Fork)
+        {
+            return;
+        }
         rice.StopScale();
         soup.StopScale();
-        StartCoroutine(arm.MoveToFork());
+        if (this.grapCoroutine != null)
+        {
+            StopCoroutine(this.grapCoroutine);
+        }
+        this.grapCoroutine = StartCoroutine(GrabFork());
+    }
+
+    IEnumerator GrabFork()
+    {
+        this.grapped = Grapped.None;
+        forkAndSpoon.spoon.transform.SetParent(forkAndSpoon.transform);
+        forkAndSpoon.spoon.ResetPosition();
+        forkAndSpoon.spoon.StartRotate();
+        yield return arm.MoveToFork();
+        forkAndSpoon.fork.StopRotate();
+        this.grapped = Grapped.Fork;
+        forkAndSpoon.fork.transform.SetParent(arm.gameObject.transform);
     }
 
     public void OnSpoonClick()
     {
-        StartCoroutine(arm.MoveToSpoon());
+        if (this.grapped == Grapped.Spoon)
+        {
+            return;
+        }
+        if (this.grapCoroutine != null)
+        {
+            StopCoroutine(this.grapCoroutine);
+        }
+        this.grapCoroutine = StartCoroutine(GrabSpoon());
+    }
+
+    IEnumerator GrabSpoon()
+    {
+        this.grapped = Grapped.None;
+        forkAndSpoon.fork.transform.SetParent(forkAndSpoon.transform);
+        forkAndSpoon.fork.ResetPosition();
+        forkAndSpoon.fork.StartRotate();
+        yield return arm.MoveToSpoon();
+        forkAndSpoon.spoon.transform.SetParent(arm.gameObject.transform);
+        this.grapped = Grapped.Spoon;
+        forkAndSpoon.spoon.StopRotate();
         rice.Scale();
         soup.Scale();
+    }
+
+    public void OnRiceClick()
+    {
+        if (this.grapped != Grapped.Spoon)
+        {
+            return;
+        }
+        StartCoroutine(arm.MoveToRice());
+    }
+
+    public void OnSoupClick()
+    {
+        if (this.grapped != Grapped.Spoon)
+        {
+            return;
+        }
+        StartCoroutine(arm.MoveToSoup());
     }
 }

@@ -10,7 +10,7 @@ public class ForkAndSpoon : MonoBehaviour
 
     public void StartRotate()
     {
-        fork.GetComponent<Rotator>().enabled = true;
-        spoon.GetComponent<Rotator>().enabled = true;
+        fork.StartRotate();
+        spoon.StartRotate();
     }
 }

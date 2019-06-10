@@ -7,11 +7,15 @@ public class Arm : MonoBehaviour
     [SerializeField] private Vector3 spoonPosition = new Vector3(13, -6, -20);
 
     [SerializeField] private Vector3 forkPosition = new Vector3(15, -6, -20);
+    [SerializeField] private Vector3 ricePosition = new Vector3(-1, -13, -20);
+    [SerializeField] private Vector3 soupPosition = new Vector3(7, -13, -20);
 
     [SerializeField] private GameObject hand1;
     [SerializeField] private GameObject hand2;
 
     private Vector3 startPosition = Vector3.zero;
+
+    private Coroutine moveCoroutine = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,13 @@ public class Arm : MonoBehaviour
     {
         hand1.SetActive(true);
         hand2.SetActive(false);
-        yield return TweenUtil.Move(from: transform.position, to: spoonPosition, 1f, transform);
+        if (this.moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+
+        this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: spoonPosition, 1f, transform));
+        yield return moveCoroutine;
         hand1.SetActive(false);
         hand2.SetActive(true);
     }
@@ -31,8 +41,38 @@ public class Arm : MonoBehaviour
     {
         hand1.SetActive(true);
         hand2.SetActive(false);
-        yield return TweenUtil.Move(from: transform.position, to: forkPosition, 1f, transform);
+        if (this.moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+        this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: forkPosition, 1f, transform));
+        yield return moveCoroutine;
         hand1.SetActive(false);
         hand2.SetActive(true);
+    }
+
+    public IEnumerator MoveToRice()
+    {
+        hand1.SetActive(false);
+        hand2.SetActive(true);
+        if (this.moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+
+        this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: ricePosition, 1f, transform));
+        yield return moveCoroutine;
+    }
+
+    public IEnumerator MoveToSoup()
+    {
+        hand1.SetActive(false);
+        hand2.SetActive(true);
+        if (this.moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+        this.moveCoroutine = StartCoroutine(TweenUtil.Move(from: transform.position, to: soupPosition, 1f, transform));
+        yield return this.moveCoroutine;
     }
 }

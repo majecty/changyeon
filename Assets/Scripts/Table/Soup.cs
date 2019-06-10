@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Soup : MonoBehaviour
 {
-   
+    [SerializeField] private Table table;
+
     public void StopScale()
     {
         GetComponent<Scaler>().enabled = false;
@@ -14,5 +15,10 @@ public class Soup : MonoBehaviour
     public void Scale()
     {
         GetComponent<Scaler>().enabled = true;
+    }
+
+    void OnMouseDown()
+    {
+        table.OnSoupClick();
     }
 }

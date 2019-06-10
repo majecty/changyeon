@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rice : MonoBehaviour
 {
+    [SerializeField] private Table table;
+
     public void StopScale()
     {
         GetComponent<Scaler>().enabled = false;
@@ -13,5 +15,10 @@ public class Rice : MonoBehaviour
     public void Scale()
     {
         GetComponent<Scaler>().enabled = true;
+    }
+
+    void OnMouseDown()
+    {
+        table.OnRiceClick();
     }
 }
