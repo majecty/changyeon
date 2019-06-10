@@ -8,6 +8,7 @@ public class Eat : MonoBehaviour
     [SerializeField] private Blow blow;
     [SerializeField] private Head head;
     [SerializeField] private SpoonAndForkHolder spoonAndForkHolder;
+    [SerializeField] private MouseMumble mouseMumble;
 
     enum State
     {
@@ -35,17 +36,21 @@ public class Eat : MonoBehaviour
 
     public void OnHeadClick()
     {
-        if (this.state != State.WaitingHeadClick)
+        if (this.state == State.WaitingHeadClick)
         {
-            return;
+            this.state = State.MoveToMouse;
+            head.OpenTheMouse();
+            StartCoroutine(ShowMoveToMouseAnimation());
         }
-
-        this.state = State.MoveToMouse;
-        head.OpenTheMouse();
-        StartCoroutine(ShowEatAnimation());
+        else if (this.state == State.WaitEyeClick)
+        {
+            this.state = State.Eating;
+            head.StopBlinkEyes();
+            StartCoroutine(ShowEatAnimation());
+        }
     }
 
-    IEnumerator ShowEatAnimation()
+    IEnumerator ShowMoveToMouseAnimation()
     {
         yield return blow.StartAnimation();
         yield return blow.StartAnimation();
@@ -58,13 +63,8 @@ public class Eat : MonoBehaviour
         head.StartBlinkEyes();
     }
 
-    public void OnEyeClick()
+    IEnumerator ShowEatAnimation()
     {
-        if (this.state != State.WaitEyeClick)
-        {
-            return;
-        }
-
-        this.state = State.Eating;
+        yield return mouseMumble.ShakeThirdTimes();
     }
 }
