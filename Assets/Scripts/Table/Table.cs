@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
+    [SerializeField] private SceneMaster sceneMaster;
     [SerializeField] private Plate plate;
     [SerializeField] private ForkAndSpoon forkAndSpoon;
     [SerializeField] private Arm arm;
@@ -121,7 +122,13 @@ public class Table : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(arm.MoveToRice());
+        StartCoroutine(PlayMoveToRice());
+    }
+
+    IEnumerator PlayMoveToRice()
+    {
+        yield return arm.MoveToRice();
+        sceneMaster.OnTableRiceClick();
     }
 
     public void OnSoupClick()
@@ -130,7 +137,13 @@ public class Table : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(arm.MoveToSoup());
+        StartCoroutine(PlayMoveToSoup());
+    }
+
+    IEnumerator PlayMoveToSoup()
+    {
+        yield return arm.MoveToSoup();
+        sceneMaster.OnTableSoupClick();
     }
 
     public void OnSausageClick()
@@ -140,6 +153,12 @@ public class Table : MonoBehaviour
             return;
         }
 
-        StartCoroutine(arm.MoveToSausage());
+        StartCoroutine(PlayMoveToSausage());
+    }
+
+    IEnumerator PlayMoveToSausage()
+    {
+        yield return arm.MoveToSausage();
+        sceneMaster.OnTableSausageClick();
     }
 }
