@@ -11,6 +11,14 @@ public class Eat : MonoBehaviour
     [SerializeField] private SpoonAndForkHolder spoonAndForkHolder;
     [SerializeField] private MouseMumble mouseMumble;
 
+    enum Target
+    {
+        Rice,
+        Soup
+    }
+
+    private Target target = Target.Rice;
+
     enum State
     {
         RaisingHand,
@@ -25,6 +33,16 @@ public class Eat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.target = Target.Soup;
+
+        if (this.target == Target.Rice)
+        {
+            spoonAndForkHolder.UseRiceSpoon();
+        } else if (this.target == Target.Soup)
+        {
+            spoonAndForkHolder.UseSoupSpoon();
+        }
+
         this.state = State.RaisingHand;
         StartCoroutine(RaiseHand());
     }
@@ -66,7 +84,14 @@ public class Eat : MonoBehaviour
 
     IEnumerator ShowEatAnimation()
     {
-        yield return mouseMumble.ShakeThirdTimes();
+        if (this.target == Target.Rice)
+        {
+            yield return mouseMumble.ShakeThirdTimes();
+        } else if (this.target == Target.Soup)
+        {
+            yield return head.MoveMouthNormalSlowly();
+        }
+        
         head.MakeEyeHappy();
         head.shakePonny();
         head.shakeBangs();

@@ -83,4 +83,11 @@ public class Head : MonoBehaviour
     {
         bangs.GetComponent<Rotator>().enabled = true;
     }
+
+    public IEnumerator MoveMouthNormalSlowly()
+    {
+        yield return TweenUtil.LocalMove(normalMouse.transform.position, new Vector3(0, 0.2f, -1), 1.0f, normalMouse.transform);
+        yield return TweenUtil.LocalMove(normalMouse.transform.position, new Vector3(0, -0.2f, -1), 1.0f, normalMouse.transform);
+        yield return TweenUtil.LocalMove(normalMouse.transform.position, new Vector3(0, 0, -1), 1.0f, normalMouse.transform);
+    }
 }
