@@ -25,6 +25,7 @@ public class Blow : MonoBehaviour
 
     IEnumerator Animate()
     {
+        StartCoroutine(TweenUtil.Alpha(1, 0.2f, 0.5f, GetComponent<SpriteRenderer>()));
         yield return TweenUtil.LocalMove(startPosition, endPosition, 1.0f, transform);
     }
 }
