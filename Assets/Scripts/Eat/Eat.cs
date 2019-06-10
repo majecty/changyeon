@@ -14,7 +14,8 @@ public class Eat : MonoBehaviour
     enum Target
     {
         Rice,
-        Soup
+        Soup,
+        Sausage
     }
 
     private Target target = Target.Rice;
@@ -33,7 +34,7 @@ public class Eat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.target = Target.Soup;
+        this.target = Target.Sausage;
 
         if (this.target == Target.Rice)
         {
@@ -41,6 +42,10 @@ public class Eat : MonoBehaviour
         } else if (this.target == Target.Soup)
         {
             spoonAndForkHolder.UseSoupSpoon();
+        }
+        else if (this.target == Target.Sausage)
+        {
+            spoonAndForkHolder.UseSausageFork();
         }
 
         this.state = State.RaisingHand;
@@ -71,10 +76,21 @@ public class Eat : MonoBehaviour
 
     IEnumerator ShowMoveToMouseAnimation()
     {
-        yield return blow.StartAnimation();
-        yield return blow.StartAnimation();
+        if (this.target != Target.Sausage)
+        {
+            yield return blow.StartAnimation();
+            yield return blow.StartAnimation();
+        }
         yield return spoonAndForkHolder.GoToMouse();
-        spoonAndForkHolder.MakeEmpty();
+        if (this.target == Target.Sausage)
+        {
+            spoonAndForkHolder.MakeForkEmpty();
+        }
+        else
+        {
+            spoonAndForkHolder.MakeSpoonEmpty();
+        }
+        
         head.CloseTheMouse();
         StartCoroutine(spoonAndForkHolder.RotateRight());
         yield return armRotator.MoveDownFast();
@@ -84,7 +100,7 @@ public class Eat : MonoBehaviour
 
     IEnumerator ShowEatAnimation()
     {
-        if (this.target == Target.Rice)
+        if (this.target == Target.Rice || this.target == Target.Sausage)
         {
             yield return mouseMumble.ShakeThirdTimes();
         } else if (this.target == Target.Soup)

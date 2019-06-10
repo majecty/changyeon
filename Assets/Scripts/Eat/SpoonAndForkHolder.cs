@@ -7,6 +7,8 @@ public class SpoonAndForkHolder : MonoBehaviour
     [SerializeField] private SpoonRice spoonRice;
     [SerializeField] private SpoonSoup spoonSoup;
     [SerializeField] private SpoonEmpty spoonEmpty;
+    [SerializeField] private ForkSausage forkSausage;
+    [SerializeField] private ForkEmpty forkEmpty;
 
     private Coroutine coroutine = null;
     public IEnumerator GoToMouse()
@@ -28,11 +30,17 @@ public class SpoonAndForkHolder : MonoBehaviour
         yield return TweenUtil.Rotate(eulerFrom: transform.eulerAngles, eulerTo: new Vector3(0, 0, 20), 1.0f, transform);
     }
 
-    public void MakeEmpty()
+    public void MakeSpoonEmpty()
     {
         spoonRice.gameObject.SetActive(false);
         spoonSoup.gameObject.SetActive(false);
         spoonEmpty.gameObject.SetActive(true);
+    }
+
+    public void MakeForkEmpty()
+    {
+        forkSausage.gameObject.SetActive(false);
+        forkEmpty.gameObject.SetActive(true);
     }
 
     public IEnumerator RotateRight()
@@ -52,5 +60,11 @@ public class SpoonAndForkHolder : MonoBehaviour
         spoonRice.gameObject.SetActive(false);
         spoonSoup.gameObject.SetActive(true);
         spoonEmpty.gameObject.SetActive(false);
+    }
+
+    public void UseSausageFork()
+    {
+        spoonRice.gameObject.SetActive(false);
+        forkSausage.gameObject.SetActive(true);
     }
 }
