@@ -12,7 +12,7 @@ public class Kitchen : MonoBehaviour
         
     }
 
-    public void onChairClick()
+    public void OnChairClick()
     {
         sceneMaster.onKitchenEnd();
     }
