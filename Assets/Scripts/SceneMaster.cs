@@ -1,12 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneMaster : MonoBehaviour
 {
     [SerializeField] private Table table;
     [SerializeField] private BlackScreen blackScreen;
     [SerializeField] private Eat eat;
+    public static bool restarted = false;
+
+    private void Awake()
+    {
+        if (restarted)
+        {
+            table.ShowImeediately();
+        }
+    }
 
     public void onKitchenEnd()
     {
@@ -38,5 +48,11 @@ public class SceneMaster : MonoBehaviour
         eat.transform.position = new Vector3(0, 0, -30);
         eat.StartEat(target);
         yield return blackScreen.FadeOut();
+    }
+
+    public static void Restart()
+    {
+        restarted = true;
+        SceneManager.LoadScene("Main");
     }
 }

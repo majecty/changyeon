@@ -112,6 +112,6 @@ public class Eat : MonoBehaviour
         head.shakePonny();
         head.shakeBangs();
         yield return new WaitForSecondsRealtime(3.0f);
-        SceneManager.LoadScene("Main");
+        SceneMaster.Restart();
     }
 }

@@ -54,6 +54,14 @@ public class Table : MonoBehaviour
         forkAndSpoon.StartRotate();
     }
 
+    public void ShowImeediately()
+    {
+        transform.position = new Vector3(0, 0, transform.position.z);
+        plate.transform.position = new Vector3(0, 0, plate.transform.position.z);
+        forkAndSpoon.transform.position = new Vector3(0, 0, forkAndSpoon.transform.position.z);
+        forkAndSpoon.StartRotate();
+    }
+
     public void OnForkClick()
     {
         if (this.grapped == Grapped.Fork)
