@@ -18,4 +18,10 @@ public class Head : MonoBehaviour
         this.normalMouse.gameObject.SetActive(false);
         this.OpenMouse.gameObject.SetActive(true);
     }
+
+    public void CloseTheMouse()
+    {
+        this.OpenMouse.gameObject.SetActive(false);
+        this.normalMouse.gameObject.SetActive(true);
+    }
 }

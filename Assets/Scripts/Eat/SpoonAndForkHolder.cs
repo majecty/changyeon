@@ -34,4 +34,9 @@ public class SpoonAndForkHolder : MonoBehaviour
         spoonSoup.gameObject.SetActive(false);
         spoonEmpty.gameObject.SetActive(true);
     }
+
+    public IEnumerator RotateRight()
+    {
+        yield return TweenUtil.Rotate(eulerFrom: transform.eulerAngles, eulerTo: new Vector3(0, 0, 0), 0.5f, transform);
+    }
 }

@@ -49,5 +49,8 @@ public class Eat : MonoBehaviour
         yield return blow.StartAnimation();
         yield return spoonAndForkHolder.GoToMouse();
         spoonAndForkHolder.MakeEmpty();
+        head.CloseTheMouse();
+        StartCoroutine(spoonAndForkHolder.RotateRight());
+        yield return armRotator.MoveDownFast();
     }
 }

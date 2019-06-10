@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class ArmRotator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator MoveDownFast()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        yield return TweenUtil.Rotate(eulerFrom: transform.eulerAngles, eulerTo: new Vector3(0, 0, 60), 0.5f, transform);
     }
 }
