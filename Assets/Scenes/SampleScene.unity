@@ -202,6 +202,8 @@ GameObject:
   - component: {fileID: 110569472}
   - component: {fileID: 110569473}
   - component: {fileID: 110569474}
+  - component: {fileID: 110569475}
+  - component: {fileID: 110569476}
   m_Layer: 0
   m_Name: fork
   m_TagString: Untagged
@@ -297,6 +299,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3550453, y: 12.620159}
   m_EdgeRadius: 0
+--- !u!114 &110569475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110569471}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -50
+  angle: 10
+--- !u!114 &110569476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110569471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f0140f40f7f5c4d87708a9d266ce85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &200724163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1531,8 @@ GameObject:
   - component: {fileID: 1037048591}
   - component: {fileID: 1037048592}
   - component: {fileID: 1037048593}
+  - component: {fileID: 1037048594}
+  - component: {fileID: 1037048595}
   m_Layer: 0
   m_Name: spoon
   m_TagString: Untagged
@@ -1598,6 +1628,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6036243, y: 12.454468}
   m_EdgeRadius: 0
+--- !u!114 &1037048594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037048590}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  angle: 10
+--- !u!114 &1037048595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037048590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8e6f429c14d654598b3e70468b1650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061789544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059124f3f8ff48348832ee9b18c8ca30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fork: {fileID: 110569476}
+  spoon: {fileID: 1037048595}
 --- !u!1 &1149739462
 GameObject:
   m_ObjectHideFlags: 0

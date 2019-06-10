@@ -22,11 +22,11 @@ public class Rotator : MonoBehaviour
             transform.Rotate(0, 0, speed * Time.deltaTime);
             yield return null;
 
-            if (transform.rotation.eulerAngles.z > 15 && transform.rotation.eulerAngles.z < 180)
+            if (transform.rotation.eulerAngles.z > angle && transform.rotation.eulerAngles.z < 180)
             {
                 this.speed = -Mathf.Abs(this.speed);
             }
-            else if (transform.rotation.eulerAngles.z > 180 && transform.rotation.eulerAngles.z < 365 - 15)
+            else if (transform.rotation.eulerAngles.z > 180 && transform.rotation.eulerAngles.z < 365 - angle)
             {
                 this.speed = Mathf.Abs(this.speed);
             }

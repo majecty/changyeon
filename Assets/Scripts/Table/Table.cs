@@ -32,5 +32,7 @@ public class Table : MonoBehaviour
             to: new Vector3(0, 0, forkAndSpoon.transform.position.z),
             time: 0.3f,
             transform: forkAndSpoon.transform);
+
+        forkAndSpoon.StartRotate();
     }
 }

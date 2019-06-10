@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ForkAndSpoon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] public Fork fork;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] public Spoon spoon;
+
+    public void StartRotate()
     {
-        
+        fork.GetComponent<Rotator>().enabled = true;
+        spoon.GetComponent<Rotator>().enabled = true;
     }
 }
