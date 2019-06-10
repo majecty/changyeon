@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (state == 0)
         {
-            GameObject.Find("chair").transform.Rotate(0, 0, speed);
+            var chairTransform = GameObject.Find("chair").transform;
+            chairTransform.Rotate(0, 0, speed);
             if (Time.time > nextTime)
             {
                 nextTime = Time.time + TimeLeft;
@@ -54,15 +55,16 @@ public class GameManager : MonoBehaviour
             {
                 state = 1;
                 speed = 0;
-                GameObject.Find("chair").transform.rotation = new Quaternion(0, 0, 0, 0);
+                chairTransform.rotation = new Quaternion(0, 0, 0, 0);
             }
         }   
 
         if (state == 1)
         {
-            if (GameObject.Find("chair").transform.position.x < 7)
+            var chairTransform = GameObject.Find("chair").transform;
+            if (chairTransform.position.x < 7)
             {
-                GameObject.Find("chair").transform.position += new Vector3(1, 0, 0);
+                chairTransform.position += new Vector3(1, 0, 0);
             }
 
             if (Time.time > nextTime)
@@ -74,28 +76,30 @@ public class GameManager : MonoBehaviour
 
         if(state == 2)
         {
-            if (GameObject.Find("tablecloth").transform.position.x < 0)
+            var tableClothTransform = GameObject.Find("tablecloth").transform;
+            if (tableClothTransform.position.x < 0)
             {
-                GameObject.Find("tablecloth").transform.position += new Vector3(1, 0, 0);
+                tableClothTransform.position += new Vector3(1, 0, 0);
             }
 
-            if(GameObject.Find("tablecloth").transform.position.x > 0)
+            if(tableClothTransform.position.x > 0)
             {
-                GameObject.Find("tablecloth").transform.position = new Vector3(0, 0, -0.2f);
+                tableClothTransform.position = new Vector3(0, 0, tableClothTransform.position.z);
                 state = 3;
             }
         }
 
         if (state == 3)
         {
-            if(GameObject.Find("arm").transform.position.x > 13)
+            var armTransform = GameObject.Find("arm").transform;
+            if(armTransform.position.x > 13)
             {
-                GameObject.Find("arm").transform.position -= new Vector3(1, 0, 0);
+                armTransform.position -= new Vector3(1, 0, 0);
             }
 
-            if (GameObject.Find("arm").transform.position.x < 13)
+            if (armTransform.position.x < 13)
             {
-                GameObject.Find("arm").transform.position = new Vector3(13, -7.5f, -1f);
+                armTransform.position = new Vector3(13, -7.5f, armTransform.position.z);
                 state = 4;
             }
         }
