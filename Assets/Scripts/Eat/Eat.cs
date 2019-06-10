@@ -6,6 +6,7 @@ public class Eat : MonoBehaviour
 {
     [SerializeField] private ArmRotator armRotator;
     [SerializeField] private Blow blow;
+    [SerializeField] private Head head;
 
     enum State
     {
@@ -37,6 +38,7 @@ public class Eat : MonoBehaviour
         }
 
         this.state = State.Eating;
+        head.OpenTheMouse();
         StartCoroutine(ShowEatAnimation());
     }
 
