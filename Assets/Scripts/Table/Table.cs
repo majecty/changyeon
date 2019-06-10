@@ -7,6 +7,8 @@ public class Table : MonoBehaviour
     [SerializeField] private Plate plate;
     [SerializeField] private ForkAndSpoon forkAndSpoon;
     [SerializeField] private Arm arm;
+    [SerializeField] private Rice rice;
+    [SerializeField] private Soup soup;
 
     public void Show()
     {
@@ -39,11 +41,15 @@ public class Table : MonoBehaviour
 
     public void OnForkClick()
     {
+        rice.StopScale();
+        soup.StopScale();
         StartCoroutine(arm.MoveToFork());
     }
 
     public void OnSpoonClick()
     {
         StartCoroutine(arm.MoveToSpoon());
+        rice.Scale();
+        soup.Scale();
     }
 }
