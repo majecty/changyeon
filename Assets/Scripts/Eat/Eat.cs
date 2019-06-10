@@ -27,6 +27,7 @@ public class Eat : MonoBehaviour
         MoveToMouse,
         WaitEyeClick,
         Eating,
+        WaitEnd,
     }
 
     private State state = State.RaisingHand;
@@ -72,6 +73,10 @@ public class Eat : MonoBehaviour
             head.StopBlinkEyes();
             StartCoroutine(ShowEatAnimation());
         }
+        else if (this.state == State.WaitEnd)
+        {
+            SceneMaster.Restart();
+        }
     }
 
     IEnumerator ShowMoveToMouseAnimation()
@@ -112,6 +117,6 @@ public class Eat : MonoBehaviour
         head.shakePonny();
         head.shakeBangs();
         yield return new WaitForSecondsRealtime(3.0f);
-        SceneMaster.Restart();
+        this.state = State.WaitEnd;
     }
 }

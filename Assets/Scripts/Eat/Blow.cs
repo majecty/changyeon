@@ -5,8 +5,8 @@ using UnityEngine;
 public class Blow : MonoBehaviour
 {
     private Coroutine animation = null;
-    private Vector3 startPosition = new Vector3(-4.5f, -3.5f, -5);
-    private Vector3 endPosition = new Vector3(-13f, -8f, -5);
+    private Vector3 startPosition = new Vector3(-4.5f, -3.5f, -10);
+    private Vector3 endPosition = new Vector3(-13f, -8f, -10);
     public IEnumerator StartAnimation()
     {
         GetComponent<SpriteRenderer>().enabled = true;
