@@ -6,6 +6,7 @@ public class Table : MonoBehaviour
 {
     [SerializeField] private Plate plate;
     [SerializeField] private ForkAndSpoon forkAndSpoon;
+    [SerializeField] private Arm arm;
 
     public void Show()
     {
@@ -34,5 +35,15 @@ public class Table : MonoBehaviour
             transform: forkAndSpoon.transform);
 
         forkAndSpoon.StartRotate();
+    }
+
+    public void OnForkClick()
+    {
+        StartCoroutine(arm.MoveToFork());
+    }
+
+    public void OnSpoonClick()
+    {
+        StartCoroutine(arm.MoveToSpoon());
     }
 }

@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f0140f40f7f5c4d87708a9d266ce85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}
 --- !u!1 &200724163
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200724163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7, y: 4.2, z: 0}
+  m_LocalPosition: {x: -4.7, y: 4.2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451729152}
@@ -1033,6 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451729152}
   - component: {fileID: 451729151}
+  - component: {fileID: 451729153}
   m_Layer: 0
   m_Name: arm
   m_TagString: Untagged
@@ -1096,7 +1098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451729150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.01, y: -7.5, z: -11}
+  m_LocalPosition: {x: 25.01, y: -7.5, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1300602875}
@@ -1104,6 +1106,22 @@ Transform:
   m_Father: {fileID: 2112124399}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &451729153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451729150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2156d945b93b943ba2a5619257da20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spoonPosition: {x: 13, y: -6, z: -20}
+  forkPosition: {x: 15, y: -6, z: -20}
+  hand1: {fileID: 1300602874}
+  hand2: {fileID: 200724163}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plate: {fileID: 1409094996}
   forkAndSpoon: {fileID: 1130851746}
+  arm: {fileID: 451729153}
 --- !u!1 &676398738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8e6f429c14d654598b3e70468b1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 542826553}
 --- !u!1 &1061789544
 GameObject:
   m_ObjectHideFlags: 0

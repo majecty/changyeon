@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Spoon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Table table;
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
+        table.OnSpoonClick();
     }
 }
