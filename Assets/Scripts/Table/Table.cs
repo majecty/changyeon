@@ -9,6 +9,10 @@ public class Table : MonoBehaviour
     [SerializeField] private Arm arm;
     [SerializeField] private Rice rice;
     [SerializeField] private Soup soup;
+    [SerializeField] private Jangjorim jangjorim;
+    [SerializeField] private Kimch kimch;
+    [SerializeField] private Namul namul;
+    [SerializeField] private Sausage sausage;
 
     enum Grapped
     {
@@ -69,11 +73,15 @@ public class Table : MonoBehaviour
         this.grapped = Grapped.None;
         forkAndSpoon.spoon.transform.SetParent(forkAndSpoon.transform);
         forkAndSpoon.spoon.ResetPosition();
-        forkAndSpoon.spoon.StartRotate();
         yield return arm.MoveToFork();
         forkAndSpoon.fork.StopRotate();
+        forkAndSpoon.spoon.StopRotate();
         this.grapped = Grapped.Fork;
         forkAndSpoon.fork.transform.SetParent(arm.gameObject.transform);
+        jangjorim.StartRotate();
+        kimch.StartRotate();
+        namul.StartRotate();
+        sausage.StartRotate();
     }
 
     public void OnSpoonClick()
@@ -82,6 +90,10 @@ public class Table : MonoBehaviour
         {
             return;
         }
+        jangjorim.StopRotate();
+        kimch.StopRotate();
+        namul.StopRotate();
+        sausage.StopRotate();
         if (this.grapCoroutine != null)
         {
             StopCoroutine(this.grapCoroutine);
@@ -94,11 +106,11 @@ public class Table : MonoBehaviour
         this.grapped = Grapped.None;
         forkAndSpoon.fork.transform.SetParent(forkAndSpoon.transform);
         forkAndSpoon.fork.ResetPosition();
-        forkAndSpoon.fork.StartRotate();
         yield return arm.MoveToSpoon();
         forkAndSpoon.spoon.transform.SetParent(arm.gameObject.transform);
         this.grapped = Grapped.Spoon;
         forkAndSpoon.spoon.StopRotate();
+        forkAndSpoon.fork.StopRotate();
         rice.Scale();
         soup.Scale();
     }

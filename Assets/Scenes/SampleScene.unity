@@ -551,6 +551,8 @@ GameObject:
   - component: {fileID: 266596071}
   - component: {fileID: 266596072}
   - component: {fileID: 266596073}
+  - component: {fileID: 266596074}
+  - component: {fileID: 266596075}
   m_Layer: 0
   m_Name: jang-jorim
   m_TagString: Untagged
@@ -646,6 +648,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6807518, y: 3.837658}
   m_EdgeRadius: 0
+--- !u!114 &266596074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266596070}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  angle: 10
+--- !u!114 &266596075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266596070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c4c195d624d7c46b47a832f879d1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &268871385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1333,10 @@ MonoBehaviour:
   arm: {fileID: 451729153}
   rice: {fileID: 1381272834}
   soup: {fileID: 1474490221}
+  jangjorim: {fileID: 266596075}
+  kimch: {fileID: 1299404599}
+  namul: {fileID: 1149739467}
+  sausage: {fileID: 1444305103}
 --- !u!1 &676398738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1874,8 @@ GameObject:
   - component: {fileID: 1149739463}
   - component: {fileID: 1149739464}
   - component: {fileID: 1149739465}
+  - component: {fileID: 1149739466}
+  - component: {fileID: 1149739467}
   m_Layer: 0
   m_Name: na-mul
   m_TagString: Untagged
@@ -1937,6 +1971,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.515133, y: 4.086216}
   m_EdgeRadius: 0
+--- !u!114 &1149739466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149739462}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  angle: 10
+--- !u!114 &1149739467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149739462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b18e2c2fb573f4da82b3919764a0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253428444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2094,8 @@ GameObject:
   - component: {fileID: 1299404595}
   - component: {fileID: 1299404596}
   - component: {fileID: 1299404597}
+  - component: {fileID: 1299404598}
+  - component: {fileID: 1299404599}
   m_Layer: 0
   m_Name: kimchi
   m_TagString: Untagged
@@ -2129,6 +2191,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.0951195, y: 4.0033684}
   m_EdgeRadius: 0
+--- !u!114 &1299404598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299404594}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  angle: 10
+--- !u!114 &1299404599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299404594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450dd7a2c4ea7fb4fbf1f71965d8e107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1300602874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2541,8 @@ GameObject:
   - component: {fileID: 1444305099}
   - component: {fileID: 1444305100}
   - component: {fileID: 1444305101}
+  - component: {fileID: 1444305102}
+  - component: {fileID: 1444305103}
   m_Layer: 0
   m_Name: sausage
   m_TagString: Untagged
@@ -2548,6 +2638,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5151215, y: 3.9205132}
   m_EdgeRadius: 0
+--- !u!114 &1444305102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444305098}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a10885905b4457468f7cc2d1059380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  angle: 10
+--- !u!114 &1444305103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444305098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157f8d97261eacc4d8e10fa4a1c65ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1474490216
 GameObject:
   m_ObjectHideFlags: 0
