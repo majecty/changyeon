@@ -7,6 +7,7 @@ public class Eat : MonoBehaviour
     [SerializeField] private ArmRotator armRotator;
     [SerializeField] private Blow blow;
     [SerializeField] private Head head;
+    [SerializeField] private SpoonAndForkHolder spoonAndForkHolder;
 
     enum State
     {
@@ -46,5 +47,7 @@ public class Eat : MonoBehaviour
     {
         yield return blow.StartAnimation();
         yield return blow.StartAnimation();
+        yield return spoonAndForkHolder.GoToMouse();
+        spoonAndForkHolder.MakeEmpty();
     }
 }
